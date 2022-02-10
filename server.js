@@ -1,4 +1,5 @@
-require("./configs/database.config");
+require("dotenv/config");
+require("./configs/database.config")
 
 const Cat = require("./models/Cat.model");
 

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose
   //       Atlas link   cats-app-dev is the name of our database
   //            |            |
-  .connect('mongodb+srv://Dorkan:D=f611916@cluster0.5zqfb.mongodb.net/cats-app-dev?retryWrites=true&w=majority')
+  .connect(`mongodb+srv://${process.env.MG_USERNAME}:${process.env.MG_PASSWORD}@cluster0.5zqfb.mongodb.net/cats-app-dev?retryWrites=true&w=majority`)
   .then(x =>
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   )
