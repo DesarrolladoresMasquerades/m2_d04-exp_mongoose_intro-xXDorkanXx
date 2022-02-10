@@ -15,4 +15,16 @@ Cat
 Cat
 
 // Bonus: Count documents
-Cat
+
+Cat.find(
+
+    //filter object
+    {
+        //modifier objects
+        age: {$gt: 0}, 
+        color: {$in: ["pink", "black", "orange"]},
+        friends: {$elemMatch: {$eq: "marco"}}
+    }
+)
+.then(cats=>cats.forEach(cat=>console.log(cat)))
+.catch(err=>console.log(err))
